@@ -1,4 +1,4 @@
-# bq-py-app
+# BQ PY App
 
 BigQuery Python Application
 
@@ -63,7 +63,7 @@ cat INPUT_FILE_NAME.json | jq -c '.[] | .' > OUTPUT_FILE_NAME.json
 jq -c 'walk(if type == "object" and has("@odata.type") then del(."@odata.type") else . end)' input.json > output.json
 ```
 
-## Basic commands
+## CLI commands
 
 ### Disk Usage Human Readable Summary:
 
