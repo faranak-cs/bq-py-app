@@ -1,0 +1,50 @@
+@startuml
+
+package "JavaScript App" {
+  [client.js] as JS
+}
+
+package "MS Entra ID" {
+  [Client ID] as CID
+}
+
+package "MS Graph" {
+  [https://graph.microsoft.com] as MG
+}
+
+package "Google Cloud" {
+  [BigQuery] as BQ
+  [Service Account] as SA
+}
+
+package "Python App" {
+  [client.py] as PY
+  [Terraform] as TF
+}
+
+package "RAG App" {
+  [LLama3.1] as LLM
+  [VectorDB] as VecDB
+  [TextSplitter] as TxtS
+  [MsgLoader] as MsgL 
+}
+
+package "User Interface" {
+  [CLI] as CLI
+}
+
+JS -> CID : 1:Authenticate
+JS <- CID : 2: Access Token\n{"access_token"}
+JS ------> MG : 3: Authorization: Bearer access_token
+JS <- MG : 4: Msg\n<b>(v1)
+JS ......> BQ : 5: <PROJECT_ID.\nDATASET_ID.\nTABLE_ID>\nMsg\n<b>(v2)
+SA ------> PY : 6: Access Token\n{"access_token"}
+PY ------> BQ : 7: Authorization
+PY ......> MsgL : 8: Msg\n<b>(v3)
+TxtS <- MsgL : 9 : Load
+VecDB <- TxtS : 10: Chunk
+VecDB <------ CLI : 11: Seach with Query
+LLM <- VecDB : 12 : Query + Context
+LLM -> CLI : 13 : Response
+
+@enduml
