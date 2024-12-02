@@ -1,6 +1,6 @@
 # BQ PY App
 
-BigQuery Python Application
+A simple app that connects to GCP and calls the BigQuery API
 
 ## Auth commands
 
