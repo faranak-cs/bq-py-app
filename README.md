@@ -78,3 +78,4 @@ wc -l FILE_NAME.json
 ```
 
 ## Architecture Diagram
+![arch_diagram](https://github.com/user-attachments/assets/4094919e-9e0f-40d8-a0fc-8c60c6038f1f)
