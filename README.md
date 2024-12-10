@@ -5,11 +5,11 @@ A simple app that connects to GCP and calls the BigQuery API
 ## Installation
 - https://cloud.google.com/sdk/docs/install-sdk
 ```
-gcloud config set compute/zone NAME
+gcloud config set compute/region us-west3
 ```
 
 ```
-gcloud config set compute/region NAME
+gcloud config set compute/zone us-west3-c
 ```
 
 ```
