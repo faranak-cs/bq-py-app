@@ -24,6 +24,10 @@ bq load --source_format=NEWLINE_DELIMITED_JSON --autodetect=True PROJECT_ID:DATA
 bq load --source_format=NEWLINE_DELIMITED_JSON 'PROJECT_ID:DATASET.TABLE_NAME' --autodetect 'gs://BUCKET_NAME/FILE_NAME.json'
 ```
 
+```
+bq show  --format=prettyjson PROJECT_ID:DATASET.TABLE_NAME | jq -r '.schema.fields[] .name ' | sort
+```
+
 ### Query
 
 #### msg-with-reply-using-id
@@ -43,6 +47,10 @@ FROM `PROJECT_ID.DATASET.TABLE_NAME` a, a.replies AS b
 WHERE a.id = 1725460272017
 GROUP BY a.id, a.body.content
 ORDER BY a.id
+```
+
+```
+create table PROJECT_ID.DATASET.TABLE_NAME as select * from PROJECT_ID.DATASET.TABLE_NAME where 1 = 2;
 ```
 
 ## JQ commands
