@@ -12,6 +12,10 @@ gcloud config set compute/zone NAME
 gcloud config set compute/region NAME
 ```
 
+```
+gcloud config set project PROJECT_ID
+```
+
 ## Auth commands
 
 ```
