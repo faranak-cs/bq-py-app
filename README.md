@@ -2,6 +2,9 @@
 
 A simple app that connects to GCP and calls the BigQuery API
 
+## Installation
+- https://cloud.google.com/sdk/docs/install-sdk
+
 ## Auth commands
 
 ```
